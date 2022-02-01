@@ -1,24 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Intro from './Basics/Intro';
+import Navbar from './Navbar';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom';
+import Home from './Basics/Home';
+import GetStarted from './Basics/GetStarted';
+import Syntex from './Basics/Syntex';
+import Output from './Basics/Output';
+import Comments from './Basics/Comments';
+import Variable from './Basics/Variable';
+import UserInput from './Basics/UserInput';
+import DataTypes from './Basics/DataTypes';
+import Operator from './Basics/Operator';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Navbar />
+        <Routes><Route exact path="/c-" element={<Home/>}></Route></Routes>
+        <Routes><Route exact path="/basics/Intro" element={<Intro/>}></Route></Routes>
+        <Routes><Route exact path="/basics/GetStarted" element={<GetStarted/>}></Route></Routes>
+        <Routes><Route exact path="/basics/Syntex" element={<Syntex/>}></Route></Routes>
+        <Routes><Route exact path="/basics/Output" element={<Output/>}></Route></Routes>
+        <Routes><Route exact path="/basics/Comments" element={<Comments/>}></Route></Routes>
+        <Routes><Route exact path="/basics/Variables" element={<Variable/>}></Route></Routes>
+        <Routes><Route exact path="/basics/Userinputs" element={<UserInput/>}></Route></Routes>
+        <Routes><Route exact path="/basics/Datatypes" element={<DataTypes/>}></Route></Routes>
+        <Routes><Route exact path="/basics/Operators" element={<Operator/>}></Route></Routes>
+      </Router>
+
+    </>
   );
 }
 
